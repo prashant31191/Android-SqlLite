@@ -35,6 +35,8 @@ dependencies {
     // for the font
     compile "com.android.support:support-compat:27.0.0"
 
+    compile 'com.google.android.gms:play-services:11.6.2'
+
     // for the bind view and etc
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
