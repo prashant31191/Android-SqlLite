@@ -1,10 +1,14 @@
 package com.dynamicsqllite.view;
 
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 import com.dynamicsqllite.ActBase;
 import com.dynamicsqllite.App;
-import com.dynamicsqllite.ParentActivity;
 import com.dynamicsqllite.R;
-import com.dynamicsqllite.database.PostsDatabaseHelper;
+import com.dynamicsqllite.database.DynamicDatabaseHelper;
 import com.dynamicsqllite.model.Post;
 import com.dynamicsqllite.model.User;
 
@@ -18,22 +22,54 @@ public class ActStudentList extends ActBase
 {
 
     // In any activity just pass the context and use the singleton method
-    PostsDatabaseHelper helper;
+    DynamicDatabaseHelper helper;
 
+    SwipeRefreshLayout srLayout;
+    RecyclerView recyclerView;
+    FloatingActionButton fabAdd;
 
 
     @Override
     protected int baseViewData() {
-        return R.layout.act_splash;
+        return R.layout.act_stud_list;
     }
 
     @Override
     protected void baseSetData() {
-        helper = PostsDatabaseHelper.getInstance(this);
-        insertData();
+        initSubViews();
+        initClickEvents();
+
+        helper = DynamicDatabaseHelper.getInstance(this);
+
+        List<Post>  postList = getPopstList();
+
+        for (int i=0; i< postList.size(); i++)
+        {
+            App.showLog("====text="+postList.get(i).text);
+            App.showLog("====user="+postList.get(i).user);
+        }
 
     }
 
+    private void initSubViews() {
+        srLayout = _findViewById(R.id.srLayout);
+        recyclerView = _findViewById(R.id.recyclerView);
+        fabAdd = _findViewById(R.id.fabAdd);
+    }
+
+    private void initClickEvents() {
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertData();
+            }
+        });
+    }
+
+    private List<Post>  getPopstList()
+    {
+        return helper.getAllPosts();
+    }
 
     private void insertData()
     {
@@ -47,7 +83,7 @@ public class ActStudentList extends ActBase
         samplePost.text = "Won won!";
 
         // Get singleton instance of database
-     //   PostsDatabaseHelper databaseHelper = PostsDatabaseHelper.getInstance(this);
+     //   DynamicDatabaseHelper databaseHelper = DynamicDatabaseHelper.getInstance(this);
 
         // Add sample post to the database
         helper.addPost(samplePost);

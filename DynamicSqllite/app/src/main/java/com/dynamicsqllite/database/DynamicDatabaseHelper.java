@@ -17,9 +17,9 @@ import java.util.List;
  * Created by prashant.patel on 12/15/2017.
  */
 
-public class PostsDatabaseHelper  extends SQLiteOpenHelper {
+public class DynamicDatabaseHelper extends SQLiteOpenHelper {
 
-    String TAG = PostsDatabaseHelper.class.getName();
+    String TAG = DynamicDatabaseHelper.class.getName();
 
     // Database Info
     private static final String DATABASE_NAME = "postsDatabase";
@@ -39,14 +39,14 @@ public class PostsDatabaseHelper  extends SQLiteOpenHelper {
     private static final String KEY_USER_NAME = "userName";
     private static final String KEY_USER_PROFILE_PICTURE_URL = "profilePictureUrl";
 
-    private static PostsDatabaseHelper sInstance;
+    private static DynamicDatabaseHelper sInstance;
 
-    public static synchronized PostsDatabaseHelper getInstance(Context context) {
+    public static synchronized DynamicDatabaseHelper getInstance(Context context) {
         // Use the application context, which will ensure that you 
         // don't accidentally leak an Activity's context.
         // See this article for more information: http://bit.ly/6LRzfx
         if (sInstance == null) {
-            sInstance = new PostsDatabaseHelper(context.getApplicationContext());
+            sInstance = new DynamicDatabaseHelper(context.getApplicationContext());
         }
         return sInstance;
     }
@@ -55,7 +55,7 @@ public class PostsDatabaseHelper  extends SQLiteOpenHelper {
      * Constructor should be private to prevent direct instantiation.
      * Make a call to the static method "getInstance()" instead.
      */
-    private PostsDatabaseHelper(Context context) {
+    private DynamicDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

@@ -1,10 +1,14 @@
 package com.dynamicsqllite;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import com.dynamicsqllite.view.ActStudentList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,5 +32,13 @@ public class ActSplash extends ActBase
 
         tvName.setText("Hello world");
         rlHeader.setVisibility(View.GONE);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(ActSplash.this, ActStudentList.class));
+                finish();
+            }
+        },2500);
     }
 }
