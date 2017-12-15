@@ -6,4 +6,6 @@
     <dimen name="txt_20sp">20dp</dimen>
     <dimen name="txt_25sp">25dp</dimen>
     <dimen name="txt_30sp">30dp</dimen>
+
+    <dimen name="d60">60dp</dimen>
 </resources>

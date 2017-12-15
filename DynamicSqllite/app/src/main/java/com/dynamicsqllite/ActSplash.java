@@ -3,30 +3,30 @@ package com.dynamicsqllite;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by prashant.patel on 12/15/2017.
  */
 
-public class ActSplash extends ParentActivity
+public class ActSplash extends ActBase
 {
-
-    @BindView(R.id.tvName)
     TextView tvName;
 
     @Override
-    int getMainView() {
+    protected int baseViewData() {
         return  R.layout.act_splash;
     }
 
     @Override
-    void initViews() {
+    protected void baseSetData() {
+        tvName = _findViewById(R.id.tvName);
 
-        tvName.setText("Hello Java");
-
-
+        tvName.setText("Hello world");
+        rlHeader.setVisibility(View.GONE);
     }
 }
