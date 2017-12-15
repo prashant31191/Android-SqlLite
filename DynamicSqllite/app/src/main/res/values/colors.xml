@@ -7,6 +7,7 @@
     <color name="clr_black">#111111</color>
     <color name="clr_gray">#888888</color>
     <color name="clr_light_gray">#e2e2e2</color>
+    <color name="clr_red">#ff5656</color>
     <color name="clr_white">#ffffff</color>
 
     <color name="clr_tr50white">#80ffffff</color>

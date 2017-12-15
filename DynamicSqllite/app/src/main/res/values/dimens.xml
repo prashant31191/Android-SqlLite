@@ -8,4 +8,7 @@
     <dimen name="txt_30sp">30dp</dimen>
 
     <dimen name="d60">60dp</dimen>
+
+    <dimen name="d5">5dp</dimen>
+    <dimen name="d15">15dp</dimen>
 </resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.dynamicsqllite.utils.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/d5"
+    android:layout_marginTop="@dimen/d5"
+    app:dragEdge="right"
+    app:mode="same_level">
+
+
+    <FrameLayout
+        android:id="@+id/delete_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@color/clr_red"
+        android:layout_marginLeft="@dimen/d5"
+        android:layout_marginRight="@dimen/d5"
+        android:gravity="center"
+        >
+
+
+        <TextView
+            android:id="@+id/tvDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/d15"
+            android:paddingRight="@dimen/d15"
+            android:layout_marginLeft="@dimen/d5"
+            android:text=" Delete "
+            android:textColor="@color/clr_white"
+            android:textSize="@dimen/txt_25sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/clr_white"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llRowMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/d15"
+                android:paddingLeft="@dimen/d5"
+                android:paddingRight="@dimen/d5"
+                android:paddingTop="@dimen/d15">
+
+                <TextView
+                    android:id="@+id/tvRowTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Android Developer Exp. 6-9 Year"
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvRowDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/d5"
+                    android:maxLines="1"
+                    android:text="Android Developer Exp. 6-9 Year"
+
+                    android:textSize="@dimen/txt_14sp"
+
+                    />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</com.dynamicsqllite.utils.SwipeRevealLayout>

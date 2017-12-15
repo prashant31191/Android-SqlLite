@@ -8,7 +8,7 @@ import android.view.View;
 import com.dynamicsqllite.ActBase;
 import com.dynamicsqllite.App;
 import com.dynamicsqllite.R;
-import com.dynamicsqllite.database.DynamicDatabaseHelper;
+import com.dynamicsqllite.database.PostDatabaseHelper;
 import com.dynamicsqllite.model.Post;
 import com.dynamicsqllite.model.User;
 
@@ -18,11 +18,11 @@ import java.util.List;
  * Created by prashant.patel on 12/15/2017.
  */
 
-public class ActStudentList extends ActBase
+public class ActPostList extends ActBase
 {
 
     // In any activity just pass the context and use the singleton method
-    DynamicDatabaseHelper helper;
+    PostDatabaseHelper helper;
 
     SwipeRefreshLayout srLayout;
     RecyclerView recyclerView;
@@ -31,7 +31,7 @@ public class ActStudentList extends ActBase
 
     @Override
     protected int baseViewData() {
-        return R.layout.act_stud_list;
+        return R.layout.act_post_list;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ActStudentList extends ActBase
         initSubViews();
         initClickEvents();
 
-        helper = DynamicDatabaseHelper.getInstance(this);
+        helper = PostDatabaseHelper.getInstance(this);
 
         List<Post>  postList = getPopstList();
 
@@ -83,7 +83,7 @@ public class ActStudentList extends ActBase
         samplePost.text = "Won won!";
 
         // Get singleton instance of database
-     //   DynamicDatabaseHelper databaseHelper = DynamicDatabaseHelper.getInstance(this);
+     //   PostDatabaseHelper databaseHelper = PostDatabaseHelper.getInstance(this);
 
         // Add sample post to the database
         helper.addPost(samplePost);

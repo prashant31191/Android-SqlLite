@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ActStudentList" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".view.ActPostList" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".view.ActDynamicList" android:theme="@style/AppTheme.NoActionBar"/>
 
 
 
