@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="clr_black">#111111</color>
+    <color name="clr_gray">#888888</color>
+    <color name="clr_light_gray">#e2e2e2</color>
+    <color name="clr_white">#ffffff</color>
+
+    <color name="clr_tr50white">#80ffffff</color>
+    <color name="clr_tr50Black">#80111111</color>
+
+</resources>
