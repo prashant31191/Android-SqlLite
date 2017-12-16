@@ -10,8 +10,9 @@ import android.os.ResultReceiver;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.trek.App;
-import com.trek.R;
+
+import com.dynamicsqllite.App;
+import com.dynamicsqllite.R;
 
 import java.io.IOException;
 import java.util.ArrayList;

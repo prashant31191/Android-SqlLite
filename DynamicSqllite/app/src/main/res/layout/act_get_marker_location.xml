@@ -59,6 +59,18 @@
         android:layout_height="match_parent"
         tools:context=".map.ActGetMarkerLocation" />
 
+        <ImageView
+            android:id="@+id/ivMylocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/d15"
+
+            android:src="@drawable/ic_my_location_black_24dp"
+            android:tint="@color/clr_red"
+            android:padding="15dp"/>
+
 
 
     <LinearLayout

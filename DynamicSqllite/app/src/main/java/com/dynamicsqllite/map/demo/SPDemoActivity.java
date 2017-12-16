@@ -2,8 +2,6 @@ package com.dynamicsqllite.map.demo;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -19,21 +17,21 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.trek.R;
-import com.utils.SPSlidingUpPanelLayout;
+import com.dynamicsqllite.ActBase;
+import com.dynamicsqllite.R;
+import com.dynamicsqllite.utils.SPSlidingUpPanelLayout;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class SPDemoActivity extends ActionBarActivity {
+public class SPDemoActivity extends ActBase {
     private static final String TAG = "SPDemoActivity";
 
     private SPSlidingUpPanelLayout mLayout;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.sp_activity_demo);
+
+    void onCreateData() {
+
 
         setSupportActionBar((Toolbar) findViewById(R.id.main_toolbar));
 
@@ -78,7 +76,7 @@ public class SPDemoActivity extends ActionBarActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
-                your_array_list );
+                your_array_list);
 
         lv.setAdapter(arrayAdapter);
 
@@ -138,7 +136,7 @@ public class SPDemoActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_toggle: {
                 if (mLayout != null) {
                     if (mLayout.getPanelState() != SPSlidingUpPanelLayout.PanelState.HIDDEN) {
@@ -177,5 +175,15 @@ public class SPDemoActivity extends ActionBarActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    protected int baseViewData() {
+        return R.layout.sp_activity_demo;
+    }
+
+    @Override
+    protected void baseSetData() {
+        onCreateData();
     }
 }

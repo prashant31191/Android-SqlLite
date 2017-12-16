@@ -7,6 +7,7 @@
     <dimen name="txt_25sp">25dp</dimen>
     <dimen name="txt_30sp">30dp</dimen>
 
+    <dimen name="d160">160dp</dimen>
     <dimen name="d60">60dp</dimen>
 
     <dimen name="d5">5dp</dimen>

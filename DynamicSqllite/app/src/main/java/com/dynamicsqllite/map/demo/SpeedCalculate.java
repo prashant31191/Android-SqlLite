@@ -1,5 +1,6 @@
 package com.dynamicsqllite.map.demo;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
@@ -10,17 +11,18 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import com.trek.App;
-import com.trek.BaseActivity;
-import com.utils.GPSTracker;
-import com.trek.R;
-import com.utils.CLocation;
-import com.utils.IBaseGpsListener;
+
+import com.dynamicsqllite.ActBase;
+import com.dynamicsqllite.App;
+import com.dynamicsqllite.R;
+import com.dynamicsqllite.utils.CLocation;
+import com.dynamicsqllite.utils.GPSTracker;
+import com.dynamicsqllite.utils.IBaseGpsListener;
 
 import java.util.Formatter;
 import java.util.Locale;
 
-public class SpeedCalculate  extends BaseActivity implements IBaseGpsListener {
+public class SpeedCalculate  extends ActBase implements IBaseGpsListener {
 
     private static String TAG = "==SpeedCalculate==";
 
@@ -29,10 +31,10 @@ public class SpeedCalculate  extends BaseActivity implements IBaseGpsListener {
     Handler handler;
     GPSTracker gpsTracker;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ViewGroup.inflate(this, R.layout.act_speed_calculation, llContainerSub);
+
+    @SuppressLint("MissingPermission")
+    void onCreateData() {
+
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
         this.updateSpeed(null);
@@ -152,6 +154,14 @@ public class SpeedCalculate  extends BaseActivity implements IBaseGpsListener {
     }
 
 
+    @Override
+    protected int baseViewData() {
+        return R.layout.act_speed_calculation;
+    }
 
+    @Override
+    protected void baseSetData() {
+onCreateData();
+    }
 }
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/d160"
+    android:background="@color/clr_light_gray"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/d5"
+    android:paddingLeft="@dimen/d5"
+    android:paddingRight="@dimen/d5"
+    android:paddingTop="@dimen/d5"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:paddingTop="@dimen/d15"
+        android:src="@android:drawable/sym_def_app_icon" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/d15"
+        android:text="Android Studio"
+        android:id="@+id/username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="android.studio@android.com" />
+
+</LinearLayout>

@@ -25,8 +25,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.trek.R;
-import com.utils.CameraPreview;
+
+import com.dynamicsqllite.ActBase;
+import com.dynamicsqllite.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,7 +38,7 @@ import java.io.IOException;
  * Created by prashant.patel on 5/5/2017.
  */
 
-public class SquareCameraActivity extends Activity implements SurfaceHolder.Callback {
+public class SquareCameraActivity extends ActBase implements SurfaceHolder.Callback {
     // a variable to store a reference to the Image View at the main.xml file
 // private ImageView iv_image;
 // a variable to store a reference to the Surface View at the main.xml file
@@ -63,11 +64,8 @@ public class SquareCameraActivity extends Activity implements SurfaceHolder.Call
     /**
      * Called when the activity is first created.
      */
-    @SuppressWarnings("deprecation")
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.square_camera);
+
+    void onCreateData() {
 
         Button btnCapture = (Button) findViewById(R.id.btnCapture);
         btnCapture.setOnClickListener(new View.OnClickListener() {
@@ -272,7 +270,18 @@ public class SquareCameraActivity extends Activity implements SurfaceHolder.Call
         }
     };
 
-private class SaveImageTask extends AsyncTask<byte[], Void, Void> {
+    @Override
+    protected int baseViewData() {
+        return R.layout.square_camera;
+    }
+
+    @Override
+    protected void baseSetData() {
+        onCreateData();
+
+    }
+
+    private class SaveImageTask extends AsyncTask<byte[], Void, Void> {
 
     @Override
     protected Void doInBackground(byte[]... data) {

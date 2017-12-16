@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dynamicsqllite">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -26,6 +34,19 @@
 
 
 
+
+        <!--for the facebook-->
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider111222111"
+            android:exported="true" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/fbAppId" />
 
         <meta-data
             android:name="preloaded_fonts"

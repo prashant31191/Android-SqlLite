@@ -1,0 +1,220 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView android:gravity="center_vertical"
+                android:id="@+id/Locality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:ellipsize="end"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="Click to change location"
+                android:textSize="20dp" />
+
+            <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                android:id="@+id/rangeSeekbar5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/d15"
+                android:background="#FFF"
+
+                app:min_value="10"
+                app:max_value="100"
+
+                app:bar_color="#8990C4"
+                app:bar_highlight_color="#2434AD"
+                app:left_thumb_color="#1A246D"
+                app:right_thumb_color="#1A246D"
+                app:left_thumb_color_pressed="#030B47"
+                app:right_thumb_color_pressed="#030B47"
+                app:data_type="_integer"
+
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/container_toolbar">
+
+        <fragment
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.sample.sishin.maplocation.HomeActivity" />
+        <LinearLayout
+            android:id="@+id/locationMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:background="#a888"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/locationMarkertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#0888"
+                android:gravity="center"
+                android:minWidth="250dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:text=" Set your Location "
+                android:textColor="@android:color/white" />
+
+
+            <ImageView
+                android:id="@+id/imageMarker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location_on_black_48dp" />
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="#9000"
+        android:alpha="0.6"
+        android:ellipsize="end"
+        android:enabled="false"
+        android:textColor="@color/clr_white"
+        android:textColorHint="@color/clr_light_gray"
+        android:layout_alignParentBottom="true"
+        android:hint="Address"
+        android:textSize="16dp"/>
+
+    <com.dynamicsqllite.utils.SPSlidingUpPanelLayout
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        app:umanoPanelHeight="68dp"
+        app:umanoShadowHeight="4dp"
+        app:umanoParallaxOffset="100dp"
+        app:umanoDragView="@+id/dragView"
+        app:umanoOverlay="true"
+        app:umanoScrollableView="@+id/list">
+
+        <!-- MAIN CONTENT -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.Toolbar
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/main_toolbar"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+
+                android:layout_width="match_parent"/>
+            <TextView
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:gravity="center"
+                android:text="Main Content"
+                android:textSize="16sp" />
+<!--
+            android:clickable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+-->
+
+
+        </FrameLayout>
+
+        <!-- SLIDING LAYOUT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="false"
+            android:id="@+id/dragView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"/>
+
+                <Button
+                    android:id="@+id/follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"/>
+
+            </LinearLayout>
+
+           <!-- <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+            </ListView>-->
+
+            <ScrollView
+            android:id="@+id/sv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The standard Lorem Ipsum passage, used since the 1500Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Section 1.10.32 of  written by Cicero in 45 t perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?1914 translation by H. RackhamBut I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete accouof the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."/>
+            </ScrollView>
+        </LinearLayout>
+    </com.dynamicsqllite.utils.SPSlidingUpPanelLayout>
+
+
+
+    </RelativeLayout>

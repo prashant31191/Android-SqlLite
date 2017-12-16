@@ -28,6 +28,10 @@ import android.widget.Toast;
 
 import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener;
 import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
+import com.dynamicsqllite.ActBase;
+import com.dynamicsqllite.App;
+import com.dynamicsqllite.R;
+import com.dynamicsqllite.utils.SPSlidingUpPanelLayout;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -47,10 +51,6 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
-import com.trek.App;
-import com.trek.BaseActivity;
-import com.trek.R;
-import com.utils.SPSlidingUpPanelLayout;
 
 
 import java.io.IOException;
@@ -59,7 +59,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-public class SPActMapDemo extends BaseActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
+public class SPActMapDemo extends ActBase implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
@@ -118,10 +118,7 @@ public class SPActMapDemo extends BaseActivity implements OnMapReadyCallback, Go
 
     private SPSlidingUpPanelLayout mLayout;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.sp_activity_maps);
+    void onCreateData() {
         mContext = this;
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -522,6 +519,16 @@ public class SPActMapDemo extends BaseActivity implements OnMapReadyCallback, Go
                     .show();
         }
 
+    }
+
+    @Override
+    protected int baseViewData() {
+        return R.layout.sp_activity_maps;
+    }
+
+    @Override
+    protected void baseSetData() {
+onCreateData();
     }
 
 

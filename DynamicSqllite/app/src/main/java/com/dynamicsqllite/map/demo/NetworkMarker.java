@@ -10,18 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.api.model.CustomMarkerModel;
-import com.api.model.SearchRouteListModel;
+import com.dynamicsqllite.App;
+import com.dynamicsqllite.R;
+import com.dynamicsqllite.map.model.CustomMarkerModel;
+import com.dynamicsqllite.utils.CircularImageView;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.oguzbabaoglu.fancymarkers.BitmapGenerator;
-//import com.oguzbabaoglu.fancymarkers.CustomMarker;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
-import com.trek.App;
-import com.trek.R;
-import com.utils.CircularImageView;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -84,11 +82,11 @@ public class NetworkMarker extends CustomMarker { //implements Target {
 
         if(customMarkerModel.data !=null && customMarkerModel.data.contains("END@!@#@"))
         {
-            markerBackground.setImageResource(R.drawable.end_pin);
+            markerBackground.setImageResource(R.drawable.ic_location_on_black_48dp);
         }
         else
         {
-            markerBackground.setImageResource(R.drawable.start_pin);
+            markerBackground.setImageResource(R.drawable.ic_my_location_black_24dp);
         }
 
         App.showLog("=========NetworkMarker=======imageUrl==="+imageUrl);
