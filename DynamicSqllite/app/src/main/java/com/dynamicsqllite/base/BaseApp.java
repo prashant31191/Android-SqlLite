@@ -2,6 +2,7 @@ package com.dynamicsqllite.base;
 
 import android.app.Application;
 
+import com.dynamicsqllite.App;
 import com.facebook.BuildConfig;
 import com.facebook.FacebookSdk;
 import com.facebook.LoggingBehavior;
@@ -16,6 +17,7 @@ public class BaseApp extends Application
     public void onCreate() {
         super.onCreate();
 
+        App.showLog("====BaseApp========onCreate===");
         FacebookSdk.sdkInitialize(getApplicationContext());
         if (BuildConfig.DEBUG) {
             FacebookSdk.setIsDebugEnabled(true);
