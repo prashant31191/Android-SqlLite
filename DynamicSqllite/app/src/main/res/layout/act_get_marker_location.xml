@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rlSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d60"
+        android:layout_centerVertical="true"
+        android:visibility="visible">
+
+        <!--android:layout_toStartOf="@+id/rlRightIcons_tmp"
+        android:layout_toEndOf="@+id/rlMenuMain_tmp"-->
+
+
+
+        <com.dynamicsqllite.utils.CustomAutoCompleteTextView
+            android:id="@+id/actvSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+
+            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:drawableTint="@color/clr_red"
+            android:background="#0201"
+            android:drawablePadding="10dp"
+            android:gravity="left|center_vertical"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:hint="Search here..."
+            android:paddingLeft="@dimen/d15"
+            android:textColorHint="@color/clr_red"
+            android:textColor="@color/clr_black"
+            android:textSize="@dimen/txt_16sp"/>
+
+        <ImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/d15"
+
+            android:src="@drawable/ic_cancel_black_24dp"
+            android:tint="@color/clr_red"
+            android:padding="15dp"/>
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_marginTop="@dimen/d60"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".map.ActGetMarkerLocation" />
+
+
+
+    <LinearLayout
+        android:id="@+id/locationMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:background="#a888"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/mLocationMarkerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0888"
+            android:gravity="center"
+            android:minWidth="250dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:text=" Set your Location "
+            android:textColor="@android:color/white" />
+
+
+        <ImageView
+            android:id="@+id/imageMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_location_on_red_300_48dp" />
+    </LinearLayout>
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

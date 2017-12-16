@@ -46,4 +46,4 @@ public class MessageOnlyLogFilter implements LogNode {
         mNext = node;
     }
 
-}Log
+}

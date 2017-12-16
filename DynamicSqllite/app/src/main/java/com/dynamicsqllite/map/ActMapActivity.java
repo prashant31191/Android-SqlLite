@@ -14,7 +14,7 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
 
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -27,7 +27,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends SampleActivityBase {
+public class ActMapActivity extends SampleActivityBase {
     /**
      * Request code for the autocomplete activity. This will be used to identify results from the
      * autocomplete activity in onActivityResult.
@@ -120,12 +120,12 @@ public class MainActivity extends SampleActivityBase {
     /**
      * Helper method to format information about a place nicely.
      */
+    @SuppressLint("StringFormatInvalid")
     private static Spanned formatPlaceDetails(Resources res, CharSequence name, String id,
                                               CharSequence address, CharSequence phoneNumber, Uri websiteUri) {
         Log.e(TAG, res.getString(R.string.place_details, name, id, address, phoneNumber,
                 websiteUri));
-        return Html.fromHtml(res.getString(R.string.place_details, name, id, address, phoneNumber,
-                websiteUri));
+        return Html.fromHtml(res.getString(R.string.place_details, name, id, address, phoneNumber,websiteUri));
 
     }
 }

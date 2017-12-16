@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
+import com.dynamicsqllite.map.ActMapActivity;
 import com.dynamicsqllite.view.ActDynamicList;
 import com.dynamicsqllite.view.ActPostList;
 
@@ -31,7 +32,8 @@ public class ActSplash extends ActBase
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(ActSplash.this, ActDynamicList.class));
+                //startActivity(new Intent(ActSplash.this, ActDynamicList.class));
+                startActivity(new Intent(ActSplash.this, ActMapActivity.class));
                 finish();
             }
         },2500);

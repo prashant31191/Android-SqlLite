@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".view.ActPostList" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".view.ActDynamicList" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".map.ActMapActivity" android:theme="@style/AppTheme.NoActionBar"/>
 
 
 
