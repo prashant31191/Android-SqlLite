@@ -19,3 +19,11 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class com.facebook.FacebookSdk {
+   boolean isInitialized();
+}
+-keep class com.facebook.appevents.AppEventsLogger {
+   com.facebook.appevents.AppEventsLogger newLogger(android.content.Context);
+   void logSdkEvent(java.lang.String, java.lang.Double, android.os.Bundle);
+}

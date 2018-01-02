@@ -3,7 +3,7 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/d15"
     android:paddingRight="@dimen/d15"
     android:paddingTop="@dimen/d15"
-    android:paddingBottom="@dimen/d15" tools:context=".map.demo.fblogin.MainActivity">
+    android:paddingBottom="@dimen/d15" tools:context=".map.demo.fblogin.LoginActivity">
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"

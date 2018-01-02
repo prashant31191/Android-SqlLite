@@ -11,12 +11,14 @@
 
 
     <application
-        android:name=".App"
+        android:name=".base.BaseApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
+        android:fullBackupContent="@xml/backup_config"
         android:theme="@style/AppTheme">
         <activity
             android:name=".ActSplash"
@@ -36,21 +38,55 @@
 
 
         <!--for the facebook-->
-        <meta-data
+
+        <activity android:name=".map.demo.fblogin.LoginActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".map.demo.fblogin.HomeActivity" android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name="com.facebook.accountkit.ui.AccountKitActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/ak_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name="com.facebook.accountkit.ui.AccountKitEmailRedirectActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/ak_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
+<!--        <meta-data
             android:name="com.facebook.accountkit.ClientToken"
-            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />-->
 
         <provider
             android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProvider111222111"
+            android:authorities="com.facebook.app.FacebookContentProvider1510475665716554"
             android:exported="true" />
+
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/fbAppId" />
 
+        <meta-data android:name="com.facebook.accountkit.ApplicationName"
+            android:value="Dynamic Sqllite"/>
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+
 
         <!--API-key-sample-demo-all-->
         <meta-data

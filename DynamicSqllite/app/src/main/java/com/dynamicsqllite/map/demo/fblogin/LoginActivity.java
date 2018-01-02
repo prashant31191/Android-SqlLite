@@ -29,14 +29,14 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     CallbackManager callbackManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         try {
-            String packageName = MainActivity.this.getApplicationContext().getPackageName();
+            String packageName = LoginActivity.this.getApplicationContext().getPackageName();
             PackageInfo info = getPackageManager().getPackageInfo(
                     packageName,
                     PackageManager.GET_SIGNATURES);
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject json_object,
                             GraphResponse response) {
 
-                        Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                         intent.putExtra("jsondata",json_object.toString());
                         startActivity(intent);
                     }

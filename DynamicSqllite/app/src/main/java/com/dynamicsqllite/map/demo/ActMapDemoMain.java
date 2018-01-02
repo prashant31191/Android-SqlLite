@@ -500,7 +500,7 @@ public class ActMapDemoMain extends AppCompatActivity implements OnMapReadyCallb
         }
 
         /**
-         * Receives data sent from FetchAddressIntentService and updates the UI in MainActivity.
+         * Receives data sent from FetchAddressIntentService and updates the UI in LoginActivity.
          */
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {

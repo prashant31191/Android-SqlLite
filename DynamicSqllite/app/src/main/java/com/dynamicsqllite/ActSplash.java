@@ -5,9 +5,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
-import com.dynamicsqllite.map.ActMapActivity;
-import com.dynamicsqllite.view.ActDynamicList;
-import com.dynamicsqllite.view.ActPostList;
+import com.dynamicsqllite.map.demo.fblogin.LoginActivity;
 
 /**
  * Created by prashant.patel on 12/15/2017.
@@ -33,7 +31,8 @@ public class ActSplash extends ActBase
             @Override
             public void run() {
                 //startActivity(new Intent(ActSplash.this, ActDynamicList.class));
-                startActivity(new Intent(ActSplash.this, ActMapActivity.class));
+                //startActivity(new Intent(ActSplash.this, ActMapActivity.class));
+                startActivity(new Intent(ActSplash.this, LoginActivity.class));
                 finish();
             }
         },2500);

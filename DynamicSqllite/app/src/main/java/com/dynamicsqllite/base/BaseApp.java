@@ -1,6 +1,8 @@
 package com.dynamicsqllite.base;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.dynamicsqllite.App;
 import com.facebook.BuildConfig;
@@ -18,10 +20,19 @@ public class BaseApp extends Application
         super.onCreate();
 
         App.showLog("====BaseApp========onCreate===");
-        FacebookSdk.sdkInitialize(getApplicationContext());
+       /* FacebookSdk.sdkInitialize(getApplicationContext());
         if (BuildConfig.DEBUG) {
             FacebookSdk.setIsDebugEnabled(true);
             FacebookSdk.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
-        }
+        }*/
     }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+
+        App.showLog("====BaseApp========attachBaseContext===");
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
 }

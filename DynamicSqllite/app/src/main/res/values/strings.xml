@@ -22,8 +22,12 @@
 
     <string name="hello">hello</string>
     <string name="follow">follow</string>
-    <string name="fbAppId">111222111</string>
-    <string name="ACCOUNT_KIT_CLIENT_TOKEN">111222111</string>
+
+    <string name="ak_login_protocol_scheme">ak1510475665716554</string>
+    <string name="fbAppId">1510475665716554</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">9acca0c75b8a4545ae7c2a880931fa5</string>
+    <string name="com.facebook.accountkit.ApplicationName">9acca0c75b8a4545ae7c2a880931fa5</string>
+
 
 
     <string name="place_details">place details</string>
