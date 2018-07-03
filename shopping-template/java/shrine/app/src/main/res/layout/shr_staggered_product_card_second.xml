@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardElevation="0dp"
     app:cardPreventCornerOverlap="true"
@@ -16,12 +17,30 @@
         android:layout_marginRight="@dimen/shr_staggered_product_grid_spacing_small"
         android:orientation="vertical">
 
-        <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/product_image"
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/shr_staggered_product_grid_card_height_landscape"
-            android:background="?attr/colorPrimaryDark"
-            android:scaleType="centerCrop" />
+
+            >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/shr_staggered_product_grid_card_height_landscape"
+                android:background="?attr/colorPrimaryDark"
+                android:scaleType="centerCrop" />
+            <ImageView
+                android:id="@+id/ivAddToCart"
+                android:layout_width="@dimen/d36"
+                android:layout_height="@dimen/d36"
+                android:padding="@dimen/d8"
+                android:src="@drawable/sel_add_to_cart"
+                tools:ignore="VectorDrawableCompat"
+
+                />
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -16,4 +16,13 @@
     <dimen name="shr_staggered_product_grid_card_height_portrait">247dp</dimen>
     <dimen name="shr_staggered_product_grid_card_width_landscape">188dp</dimen>
     <dimen name="shr_staggered_product_grid_card_height_landscape">140dp</dimen>
+
+    <dimen name="d36">36dp</dimen>
+    <dimen name="d10">10dp</dimen>
+    <dimen name="d8">8dp</dimen>
+    <dimen name="d5">5dp</dimen>
+    <dimen name="d3">3dp</dimen>
+
+    <dimen name="d45">45dp</dimen>
+    <dimen name="d50">50dp</dimen>
 </resources>
