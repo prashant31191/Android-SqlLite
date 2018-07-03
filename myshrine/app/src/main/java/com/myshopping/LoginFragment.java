@@ -13,18 +13,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.myshopping.R;
+import com.myshopping.application.App;
+import com.myshopping.utils.PreferencesKeys;
+import com.myshopping.utils.keyboardutils.KeyboardDismisser;
 
 /**
  * Fragment representing the login screen for Shrine.
  */
 public class LoginFragment extends Fragment {
 
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        KeyboardDismisser.useWith(this);
+    }
+
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.shr_login_fragment, container, false);
+
+
         final TextInputLayout passwordTextInput = view.findViewById(R.id.password_text_input);
         final TextInputEditText passwordEditText = view.findViewById(R.id.password_edit_text);
         MaterialButton nextButton = view.findViewById(R.id.next_button);
@@ -37,6 +47,9 @@ public class LoginFragment extends Fragment {
                     passwordTextInput.setError(getString(R.string.shr_error_password));
                 } else {
                     passwordTextInput.setError(null); // Clear the error
+
+                    App.getSharePreferences().setPref(PreferencesKeys.getPref_is_login(), "1");
+
                     ((NavigationHost) getActivity()).navigateTo(new ProductGridFragment(), false); // Navigate to the next Fragment
                 }
             }

@@ -27,5 +27,10 @@
     <dimen name="d45">45dp</dimen>
     <dimen name="d50">50dp</dimen>
 
+    <dimen name="txt_d10">10dp</dimen>
+    <dimen name="txt_d15">15dp</dimen>
+    <dimen name="txt_d20">20dp</dimen>
+    <dimen name="txt_d30">30dp</dimen>
+
 
 </resources>

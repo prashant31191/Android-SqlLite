@@ -8,7 +8,9 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/filter"
-        android:icon="@drawable/shr_filter"
+        android:icon="@drawable/ic_add_shopping_cart_indigo_a100_48dp"
         android:title="@string/shr_filter_title"
         app:showAsAction="always" />
+
+    <!--android:icon="@drawable/shr_filter"-->
 </menu>

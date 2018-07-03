@@ -9,9 +9,8 @@ import android.view.ViewGroup;
 
 import com.myshopping.NavigationHost;
 import com.myshopping.ProductCartListFragment;
-import com.myshopping.ProductGridFragment;
 import com.myshopping.R;
-import com.myshopping.application.ShrineApplication;
+import com.myshopping.application.App;
 import com.myshopping.network.ImageRequester;
 import com.myshopping.network.ProductEntry;
 
@@ -73,16 +72,18 @@ public class StaggeredProductCardRecyclerViewAdapter extends RecyclerView.Adapte
 
                     if (productList.get(position).is_added_cart.equalsIgnoreCase("0")) {
                         productList.get(position).is_added_cart = "1";
-                        ShrineApplication.cartProductList.add(productList.get(position));
+                        App.cartProductList.add(productList.get(position));
 
                         notifyDataSetChanged();
 
-                        ((NavigationHost) mContext).navigateTo(new ProductCartListFragment(), true); // Navigate to the next Fragment
+                        App.showSnackBar(view,"Product added to cart.");
+                        //((NavigationHost) mContext).navigateTo(new ProductCartListFragment(), true); // Navigate to the next Fragment
                     } else {
                         productList.get(position).is_added_cart = "0";
-                        if (ShrineApplication.cartProductList.contains(productList.get(position))) {
-                            ShrineApplication.cartProductList.remove(productList.get(position));
+                        if (App.cartProductList.contains(productList.get(position))) {
+                            App.cartProductList.remove(productList.get(position));
                         }
+                        App.showSnackBar(view,"Product removed from cart.");
 
                         notifyDataSetChanged();
                     }

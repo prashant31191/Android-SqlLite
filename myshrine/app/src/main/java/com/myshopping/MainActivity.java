@@ -5,20 +5,32 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-import com.myshopping.R;
+import com.myshopping.application.App;
+import com.myshopping.utils.PreferencesKeys;
+import com.myshopping.utils.keyboardutils.KeyboardDismisser;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost {
+    App app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shr_main_activity);
+        app = new App();
+        KeyboardDismisser.useWith(this);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.container, new LoginFragment())
-                    .commit();
+            if (app.getSharePreferences().getStringPref(PreferencesKeys.getPref_is_login()).equalsIgnoreCase("1")) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.container, new ProductGridFragment())
+                        .commit();
+            } else {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.container, new LoginFragment())
+                        .commit();
+            }
         }
     }
 

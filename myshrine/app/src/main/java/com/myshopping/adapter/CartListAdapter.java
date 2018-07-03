@@ -7,10 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.myshopping.NavigationHost;
-import com.myshopping.ProductCartListFragment;
 import com.myshopping.R;
-import com.myshopping.application.ShrineApplication;
+import com.myshopping.application.App;
 import com.myshopping.network.ImageRequester;
 import com.myshopping.network.ProductEntry;
 
@@ -66,7 +64,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListViewHolder> {
                 public void onClick(View view) {
 
 
-                    ShrineApplication.cartProductList.remove(position);
+                    App.cartProductList.remove(position);
                     //productList.remove(position);
                     notifyDataSetChanged();
                 }

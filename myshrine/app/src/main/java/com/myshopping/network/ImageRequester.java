@@ -9,7 +9,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
-import com.myshopping.application.ShrineApplication;
+import com.myshopping.application.App;
 
 /**
  * Class that handles image requests using Volley.
@@ -22,7 +22,7 @@ public class ImageRequester {
     private final int maxByteSize;
 
     private ImageRequester() {
-        context = ShrineApplication.getAppContext();
+        context = App.getAppContext();
         this.requestQueue = Volley.newRequestQueue(context);
         this.requestQueue.start();
         this.maxByteSize = calculateMaxByteSize();
