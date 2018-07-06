@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#E0E0E0</color>
     <color name="colorPrimaryDark">#FBB8AC</color>
-    <color name="colorAccent">#FEDBD0</color>
+    <color name="colorAccent">#fedbd0</color>
     <color name="textColorPrimary">#442C2E</color>
     <color name="textColorPrimaryTr80">#80442C2E</color>
     <color name="textColorPrimaryTr30">#30442C2E</color>
@@ -10,4 +10,5 @@
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFBFA</color>
     <color name="colorControlActivated">#442C2E</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

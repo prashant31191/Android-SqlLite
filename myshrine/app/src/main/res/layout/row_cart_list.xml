@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <android.support.design.card.MaterialCardView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/d5"
+        android:clipToPadding="false"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="@dimen/d5"
+        app:cardElevation="@dimen/d5"
+
+        >
+
+        <!-- Product card layout used in MDC-103 and onward -->
+        <LinearLayout
+            android:layout_width="@dimen/shr_staggered_product_grid_card_width_landscape"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/shr_staggered_product_grid_card_height_landscape"
+
+                >
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/product_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/shr_staggered_product_grid_card_height_landscape"
+                    android:background="?attr/colorPrimaryDark"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/ivAddToCart"
+                    android:layout_width="@dimen/d36"
+                    android:layout_height="@dimen/d36"
+                    android:padding="@dimen/d8"
+                    android:src="@drawable/sel_add_to_cart"
+                    tools:ignore="VectorDrawableCompat"
+
+                    />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floatingActionButton2"
+                    android:layout_width="@dimen/d45"
+                    android:layout_height="@dimen/d45"
+                    android:layout_alignParentBottom="true"
+                    android:clickable="true"
+                    android:layout_margin="@dimen/d10"
+                    app:srcCompat="@drawable/ic_add_shopping_cart_indigo_a100_48dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/d5"
+                android:paddingBottom="@dimen/d10"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/product_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shr_product_title"
+                    android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shr_product_description"
+                    android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceBody2" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.design.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/product_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/sel_add_to_cart"
+        android:text="@string/shr_product_remove"
+        android:textAlignment="center"
+        tools:text="@string/shr_product_remove"
+        android:textSize="@dimen/txt_d15" />
+
+</RelativeLayout>

@@ -35,8 +35,19 @@
                 android:padding="@dimen/d5"
                 android:src="@drawable/sel_add_to_cart"
                 tools:ignore="VectorDrawableCompat"
+                android:visibility="gone"
 
                 />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="@dimen/d45"
+                android:layout_height="@dimen/d45"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:layout_margin="@dimen/d10"
+                app:srcCompat="@drawable/ic_add_shopping_cart_indigo_a100_48dp" />
         </RelativeLayout>
 
 
